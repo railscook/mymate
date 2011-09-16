@@ -1,0 +1,18 @@
+
+File Name: 
+    	<%= link_to @webpage.file_name, :controller => 'viewer', 
+    	:action => 'index', :id => @webpage.category_id , 
+    	:body => @webpage.id, :user_name => session[:user].login %> <br/>
+
+
+<strong>Url: </strong> <%= @webpage.url %><br />
+
+
+<strong>Content Category: </strong> <%= Category.find(@webpage.category_id).title %><br />
+
+<strong>Publish: </strong>  <% if @webpage.publish == 1%>  True  <%else %> False<% end %><br />
+
+
+<br/><br/><br/>
+<%= link_to 'Edit', :action => 'edit', :id => @webpage %> |
+<%= link_to 'Back', :action => 'list' %> 

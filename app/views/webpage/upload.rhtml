@@ -1,0 +1,16 @@
+<%= error_messages_for 'webpage' %>
+<h1>New file</h1>
+<fieldset>
+<% form_tag ({:action => 'createupload'}, :multipart => true) do %>
+  
+  	<h3> Directory Drop-down Box Lists: </h3><br/>
+	<label for="content_category">Content Directory: </label><br/>
+	<%= collection_select(:webpage, :category_id, @categories, :id, :title) %><br/><br/>
+
+	<input type="file" name="webpage[url]" /><br /><br/>
+  <%= submit_tag "Upload" %><br/>
+<% end %>
+</fieldset>
+
+<%= link_to 'Back', :action => 'list' %>
+

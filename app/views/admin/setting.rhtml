@@ -1,0 +1,17 @@
+<h1>Central Setting of MyMate CMS</h1>
+
+<table>
+	
+<tr><td> <img src="/images/arrow.gif"/> 
+	<%= link_to 'Administrator', :action => 'list' %> 
+	(<%= Admin.count %>) </td></tr>
+	
+<tr><td> <img src="/images/arrow.gif"/> 
+	<%= link_to 'Registered Members', :action => 'user_list' %> (<%= User.count %>) </td></tr>
+	
+<!-- stylesheet list-->
+<tr><td> <img src="/images/arrow.gif"/> 
+	<%= link_to 'Stylesheet setting', :action => 'stylesheet_list' %> (<%= Stylesheet.count %>) </td></tr>
+	
+
+</table>

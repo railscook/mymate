@@ -1,0 +1,27 @@
+<h1>Editing faq</h1>
+
+<%= error_messages_for :faq %>
+
+<% form_for(@faq) do |f| %>
+  <p>
+    <b>Question</b><br />
+    <%= f.text_area :question %>
+  </p>
+
+  <p>
+    <b>Question type</b><br />
+    <%= f.text_field :question_type %>
+  </p>
+
+  <p>
+    <b>Answer</b><br />
+    <%= f.text_area :answer %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @faq %> |
+<%= link_to 'Back', faqs_path %>

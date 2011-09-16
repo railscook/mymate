@@ -1,0 +1,15 @@
+
+<p>
+	<h1> Video of "<%= @video.title %>" </h1><br/>
+	<embed src="<%= @video.url %>" 
+	width="500" height="500" autoplay="false">
+	</embed>
+	<marquee direction="left" scrollamount="2" width="300">
+		<%= @video.description %>
+	</marquee><br/><br/><br/>
+	
+	Links to download <%= link_to @video.url %> <br/><br/><br/>
+	
+
+
+

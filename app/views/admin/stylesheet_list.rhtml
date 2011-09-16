@@ -1,0 +1,25 @@
+<h1>Listing stylesheets</h1>
+
+<table>
+  <tr>
+	  <th> Name </th>
+	  <th> &nbsp; </th>
+	  <th> &nbsp; </th>
+	  <th> &nbsp; </th>
+  </tr>
+  
+<% for stylesheet in @stylesheets %>
+  <tr>
+    <td><input type="checkbox" name="C1" value="ON"> <%= stylesheet.name %></td>
+    <td><%= link_to 'View', :action => 'stylesheet_show', :id => stylesheet %></td>
+    <td><%= link_to 'Edit', :action => 'stylesheet_edit', :id => stylesheet %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => stylesheet }, :confirm => 'Are you sure want to delete this stylesheet?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<br /><br />
+
+<%= link_to 'New stylesheet', :action => 'stylesheet_new' %> <br/><br/>
+
+<%= link_to 'Upload New stylesheet', :action => 'stylesheet_upload' %>

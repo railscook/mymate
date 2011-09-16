@@ -1,0 +1,19 @@
+<h1>Content Categories</h1> 
+
+<% unless @contents.size > 0 %>
+	Sorry, there is no content category.
+<% else %>
+<ul id="content_list"> 
+	<%= render :partial => 'content', :collection => @contents %> 
+</ul> 
+<% end %>
+<p id="add_link"><%= link_to_function("Add a content", "Element.remove('add_link');Element.show('add_content')")%></p> 
+
+<div id="add_content" style="display:none;"> 
+	<%= form_remote_tag(:url => {:action => 'new'}, 
+	:html => {:id => 'content_form'})%> 
+	Name: <%= text_field "content", "title" %> 
+	<%= submit_tag 'Add' %> 
+	<%= end_form_tag %> 
+</div> 
+

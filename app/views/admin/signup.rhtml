@@ -1,0 +1,7 @@
+<font size="16">Please register</font>
+<% form_tag({:action => 'create'}) do %> 
+<fieldset id="register"> 
+	<%= render :partial => 'form' %>
+<%= submit_tag 'Create my account' -%> 
+<% end %> 
+</fieldset> 

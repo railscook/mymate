@@ -1,0 +1,13 @@
+<h1>Stylesheet Menus</h1>
+
+<% form_tag :action => 'style_update', :id => @stylesheet, :user => User.find(@user) do %>
+<fieldset>
+<p><label for="stylsheet_selected">Current Stylesheet: <b><%= @selected.name %> </b></label>
+</p>
+<p><label for="stylsheet_lists">Stylesheet Options: </label>
+<%= collection_select(:stylesheet, :id, @stylesheets, :id, :name, :class =>"stylesheet") %>
+</p>
+</fieldset>
+
+  <%= submit_tag 'Choose' %>
+<% end %>

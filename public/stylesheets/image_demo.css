@@ -1,0 +1,100 @@
+body {
+  background-color:        #FFFFFF;
+  background-image:        url(/maps/images/gradient.jpg);
+  background-repeat:    no-repeat;
+  color:                            #666666;
+  font-family:                arial, sans;
+  font-size:                    100%;
+  line-height:                1.7em;
+  margin:                            1em 2em;
+}
+
+#titlebar {
+  font-size:                     1.2em;
+  border-bottom:                    2px solid #333333;
+  margin-bottom:                    1em;
+  padding-bottom:                1em;
+}
+
+h2 {
+  font-size:                     1.2em;
+}
+
+ul.navigation {
+  background-color:        #333333;
+  padding:                        0em 0.5em;
+  list-style-type:        none;
+}
+
+ul.navigation li {
+  border-right:                1px solid #666666;
+  display:                        inline;
+}
+
+.navigation a {
+  color:                            #FFFFFF;
+  padding:                        0.5em;
+}
+
+.description {
+  font-size:                    1.2em;
+}
+
+.upload {
+  font-size:                    1.2em;
+}
+
+strong {
+  background-color:        #FFFF99;
+}
+
+#centercontent {
+  width: 100%;
+  text-align: center;
+  margin-bottom:                1em;
+  padding-bottom:                1em;                
+  margin-top:                    1em;
+  padding-top:                1em;
+}
+
+#bottom {                
+    width: 100%;
+    float: left;
+    text-align: center;
+    border-top:                    2px solid #333333;
+    margin-top:                    1em;
+    padding-top:                1em;
+}
+
+div.float {
+  width: 120px;
+  padding: 10px;
+  float: left;
+}
+
+div.spacer {
+  clear: both;
+}
+
+div.float img {
+  margin-left: 5px;
+  }
+
+div.float p {
+  font-size: 9px;
+  text-align: center;
+  }            
+
+#image-list ul {    
+  list-style: none;
+}
+
+#image-list ul li {
+  list-style: none;
+  display: inline; 
+    float: left;  
+    width: 120px; 
+    height: 120px; 
+    padding: 10px;
+  border: 1px solid #000;      
+}

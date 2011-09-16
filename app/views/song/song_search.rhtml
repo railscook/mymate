@@ -1,0 +1,25 @@
+<h1>Search Songs</h1>
+
+<% if @songs.blank? %>
+<p> No New Song.</p>
+<% else %>
+
+
+<h3> 
+	Search: 
+	<%= text_field "song", "title" -%>
+	<%= observe_field :song_title,
+	:frequency => 1.0,
+	:update => 'songs',
+	:url => { :controller => 'song', :action=> 'search' },
+	:with => "'search=' + encodeURIComponent(value)"
+	%>
+</h3>
+
+<div id="songs">
+		<%= render :partial => 'song', :collection => @songs %> 
+	</div>
+<% end %>
+
+
+<br />

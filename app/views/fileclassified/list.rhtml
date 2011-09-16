@@ -1,0 +1,28 @@
+<h1>Listing files</h1>	
+<% unless @fileclassifieds.size > 0 %> <br/>
+	Sorry, there is no file.
+<% else %>	
+<table>
+  <tr>
+	<th> FileName</th>
+	<th> Type </th>
+	<th> &nbsp; </th>
+	<th> &nbsp; </th>
+	<th> &nbsp; </th>
+  </tr>
+  
+<% for fileclassified in @fileclassifieds %>
+  <tr>
+    <td><%= fileclassified.name %></td>
+    <td><%= fileclassified.content_type %></td>
+    <td valign="top"><%= link_to 'Show', :action => 'show', :id => fileclassified %></td>
+    <td valign="top"><%= link_to 'Edit', :action => 'edit', :id => fileclassified %></td>
+    <td valign="top"><%= link_to 'Destroy', { :action => 'destroy', :id => fileclassified }, :confirm => 'Are you sure want to delete this file?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<% end %>
+<br /><br /><br />
+
+<%= link_to 'New File', :action => 'new' %>

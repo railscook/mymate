@@ -1,0 +1,3 @@
+<li id="content<%= content.id %>">
+<%= link_to content.title, :action => 'show', :id => content.id %>
+<%= "(#{content.create_new_files.count})" -%></li>

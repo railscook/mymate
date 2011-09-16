@@ -1,0 +1,27 @@
+<h1>Search Photos</h1>
+
+<% if @photos.blank? %>
+<p>There is no photo recently.</p>
+<% else %>
+
+
+<h3> 
+	Search: 
+	<%= text_field "photo", "picture_name" -%>
+	<%= observe_field :photo_picture_name,
+	:frequency => 1.0,
+	:update => 'photos',
+	:url => { :controller => 'photo', :action=> 'search' },
+	:with => "'search=' + encodeURIComponent(value)"
+	%>
+</h3>
+
+<div id="photos">
+		<%= render :partial => 'photo', :collection => @photos %> 
+	</div>
+<% end %>
+
+
+<br />
+
+

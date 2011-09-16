@@ -1,0 +1,15 @@
+
+<% for category in @categories %>
+<% @webpages  = category.webpages %>
+	<% for web in @webpages %>
+		<% if webpage.id == web.id %>
+			<%= link_to webpage.description, 
+					:controller => 'viewer', 
+			    	:action => 'index', :id => webpage.category_id , 
+			    	:body => webpage.id, :user_name => session[:user].login %>
+		    	
+				<br/>
+		<% end %>
+	<% end %>
+<% end %>		
+		

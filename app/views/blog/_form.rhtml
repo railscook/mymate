@@ -1,0 +1,13 @@
+<%= error_messages_for 'blog' %>
+
+<!--[form:blog]-->
+<p><label for="blog_title">Title</label><br/>
+<%= text_field 'blog', 'title'  %></p>
+
+<p><label for="blog_body">Body</label><br/>
+<%#= text_area( "blog", "body")%>
+<%= fckeditor_text_field( "blog", "body", :toolbarSet => 'Simple')%>
+<%#= fckeditor_textarea("blog", "body", :toolbarSet => 'Simple') %>
+</p>
+<!--[eoform:blog]-->
+

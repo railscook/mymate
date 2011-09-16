@@ -1,0 +1,50 @@
+       <!-- start header -->
+     <div id="header">
+          <div id="top-menu-bar">
+ 			<% unless session[:user] %>
+                                <div style="float: right">
+                  	        <%= link_to 'login', :controller => 'login', :action => 'signin' -%> 
+				<%= link_to 'register', :controller => 'login', :action => 'signup' %>
+                               </div> 
+			<% else %> 
+				<%= link_to "Home", :controller => 'cms', :action => 'index' %>
+				 <%= link_to 'FAQ', :controller => 'cms', :action => 'faq' -%>
+	 			<%= link_to "About", :controller => 'cms', :action => 'about' %>
+                               <div style="float: right">
+                               <% login = session[:user].login %>
+			       <%= link_to_function "#{login}! ", "alert('You are logged in as #{login}')" -%> 
+			       <%= link_to 'Logout', :controller => 'login', :action => 'logout' -%>
+		              </div>
+			<% end %> 
+
+          </div>
+                <!-- end top menu bar -->
+
+         <div id="logo">
+
+           <span id="title">My Mate </span>
+           <span id="sub-title">CMS powered by Ruby on Rails </span>
+         </div>
+       
+        <!-- end header -->
+
+        <!-- start menu -->
+      <% if session[:user] %>
+        <div id="top-menu-bar">
+	 <%= link_to "<small> NewBlog </small>", :controller => 'blog' ,
+				:action => 'new'%> 
+			 <%= link_to "<small> BlogLists </small>", :controller => 'blog' %> 
+			 <%= link_to "<small> Gallery </small>", :controller => 'photo' %>	
+			 <%= link_to "<small> Contacts </small>", :controller => 'friend' %> 
+			 <%= link_to '<small> Profile </small>', :controller => 'user', 
+				:action => 'show', 
+					:login => session[:user].login -%> 
+			 <%= link_to '<small> [Website] </small>', :controller => 'viewer', 
+				:action => 'profile',  :id => -100 , :user_name => session[:user].login -%> 
+		
+       </div>
+        <!-- end menu -->
+      <% end %>     
+  </div>
+ 
+

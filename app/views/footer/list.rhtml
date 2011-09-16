@@ -1,0 +1,27 @@
+<h1>Listing footers</h1>
+
+<% unless @footers.size > 0 %> <br />
+	Sorry, there is no footer.
+<% else %>
+<table>
+  <tr>
+    <th> Coding </th>
+    <th> &nbsp; </th>
+    <th> &nbsp; </th>
+    <th> &nbsp; </th>
+  </tr>
+  
+<% for footer in @footers %>
+  <tr>
+    <td><%= footer.coding %></td>
+    <td><%= link_to 'Show', :action => 'show', :id => footer %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => footer %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => footer }, :confirm => 'Are you sure want to delete this footer code?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<% end %>
+<br /><br /><br /><br />
+
+<%= link_to 'New footer', :action => 'new' %>

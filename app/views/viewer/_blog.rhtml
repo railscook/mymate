@@ -1,0 +1,11 @@
+
+	<table id='blog'><tr><td> 
+	    <h2><%= link_to blog.title , :action => 'blog_show', :id => blog, :cid => -100 , 
+	    	:user_name => @user_name %></h2> 
+	    <small> << Click Here to Read my blog and Leave Comments </small>
+	    
+	<hr/>
+	<small>
+	    	<%= blog.created_at.to_s(:long) %>
+	    	</small>
+	</td></tr></table> <br/>

@@ -1,0 +1,25 @@
+<h1>Listing users</h1>
+<% unless @users.size > 0 %> <br/>
+	Sorry, there is no user.<br/>
+<% else %>	
+<table>
+  <tr>
+  <th> Login Name </th>
+  <th> &nbsp; </th>
+  <th> &nbsp; </th>
+  </tr>
+  
+<% for user in @users %>
+  <tr>
+    <td><%= user.login %></td>
+    <td><%= link_to 'Show', :action => 'user_show', :id => user %></td>
+    <td><%= link_to 'Destroy', { :action => 'user_destroy', :id => user }, :confirm => 'Are you sure want to delete this user account? If you delete this user account, all contents of this user will be deleted immediately.', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<% end %>
+<br />
+
+
+<%= link_to 'Back', :action => 'setting' %>

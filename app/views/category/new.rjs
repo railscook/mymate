@@ -1,0 +1,7 @@
+if @category.new_record? 
+  page.alert @category.errors.full_messages.join("\n")
+else
+  page.insert_html :bottom, 'category_list', :partial => 'category' 
+  page.visual_effect :highlight, "category_#{@category.id}" 
+  page.form.reset 'category_form' 
+end

@@ -1,0 +1,25 @@
+body{
+	background-color: #888;
+	font-family: Lucida Grande;
+	font-size: 11px;
+	margin: 25px;
+}
+
+form{
+	margin: 0;	
+	margin-bottom: 10px;
+	background-color: #eee;
+	border: 5px solid #333;
+	padding: 25px;
+}
+
+fieldset{
+	border: none;
+}
+
+#photos img{
+	border: 1px solid #000;
+	width: 75px;
+	height: 75px;
+	margin: 5px;
+}

@@ -1,0 +1,30 @@
+
+<h1><%=session[:user].login %>'s Wonderful Weblog</h1><br/>
+<%= render :partial => "show", :object => @blog %>
+
+<!-- forin tab -->
+
+<!-- Comments List -->
+<h2> <%= @blog.comments.count %> Comments </h2><br/>
+<% for comment in @blog.comments %>
+        <table id="comments"><tr><td>
+        <%= comment.body %>
+
+        <div align="right"> <small> <i>by
+
+<%= mail_to comment.email, comment.user_name -%> at </i> <%= comment.created_at.to_s(:long) %></small> (<%= link_to 'Destroy', { :action => 'destroy_comment', :id => comment }, :confirm => 'Are you sure want to delete this comment ?', :method => :blog %>)</div>
+
+</td></tr></table><br/>
+<% end %>
+
+<!-- New Comment Form -->
+<h2> Leave a comment </h2>
+
+
+<%= form_tag :action => "comment", :id => @blog %>
+<%= error_messages_for :comment %>
+        <%= render :partial => "comment" %>
+<%= submit_tag "Submit Comment" %>
+</form>
+
+

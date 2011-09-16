@@ -1,0 +1,29 @@
+<h1>Search Webpages</h1>
+
+
+<% if @webpages.blank? %>
+<p> No New File.</p>
+<% else %>
+
+
+<h3> 
+	Search: 
+	<%= text_field "webpage", "description" -%>
+	<%= observe_field :webpage_description,
+	:frequency => 1.0,
+	:update => 'webpages',
+	:url => { :controller => 'webpage', :action=> 'search' },
+	:with => "'search=' + encodeURIComponent(value)"
+	%>
+</h3>
+
+<div id="webpages">
+	<% for category in @categories %>
+		<% @webpages  = category.webpages %>
+		<%= render :partial => 'webpage', :collection => @webpages %> 
+	<% end %>
+	</div>
+<% end %>
+
+
+<br />

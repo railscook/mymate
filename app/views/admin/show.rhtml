@@ -1,0 +1,8 @@
+<% for column in Admin.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @admin.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @admin %> |
+<%= link_to 'Back', :action => 'list' %>

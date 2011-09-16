@@ -1,0 +1,30 @@
+<h1> Web Contents Group by category </h1>
+
+<% unless @categories.size > 0 %>
+	Sorry, there is no sitemap yet.
+<% else %>	
+<hr/>
+<div id="sitemap">
+		<ul>
+		<% for category in @categories %> <br/>
+		  <li> <h2> <%= category.title %> </h2><br/>
+		  	   <ul>
+		  	   	  <% for file in category.webpages %>
+		  	   	    <li> 
+		  	   	    	File Name: <%= file.file_name %> <br/>
+		  	   	    	Description: <%= file.description %> <br/>
+		  	   	    	Link:
+  	   	    	    	<%= link_to file.file_name, :controller => 'viewer', 
+  	   	    	    	:action => 'index', :id => file.category_id , 
+  	   	    	    	:body => file.id, :user_name => session[:user].login %> <br/>
+  	   	    	    	Url: <%= file.url %>
+  	   	    	    	<hr/>
+		  	   	    </li>
+		  	   	  <% end %>
+		  	   	</ul>
+		  </li>
+		  
+		<% end %>
+		</ul>
+</div>	
+<% end %>

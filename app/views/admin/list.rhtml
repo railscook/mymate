@@ -1,0 +1,32 @@
+<h1>Listing admins</h1>
+<% unless @admins.size > 0 %> <br/>
+	Sorry, there is no administrator.<br/>
+<% else %>	
+
+<table>
+  <tr>
+  <% for column in Admin.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+   <th> &nbsp; </th>
+   <th> &nbsp; </th>
+   <th> &nbsp; </th>
+  </tr>
+  
+<% for admin in @admins %>
+  <tr>
+  <% for column in Admin.content_columns %>
+    <td><%=h admin.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => admin %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => admin %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => admin }, :confirm => 'Are you sure want to delete this admin account?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<% end %>
+<br />
+
+<%= link_to 'New admin', :action => 'new' %> |   
+<%= link_to 'Back', :action => 'setting' %>

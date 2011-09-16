@@ -1,0 +1,28 @@
+<h1>Listing of approved web pages</h1>
+
+<% unless @webpages.size > 0 %> <br/>
+
+No approved file! <br/>
+
+<% else %>
+<table>
+  <tr>
+  	<th> File Name</th>
+  	<th> Description</th>
+  </tr>
+<% for webpage in @webpages %>
+  <tr>
+    <td> 
+    	<%= link_to webpage.file_name, :controller => 'viewer', 
+    	:action => 'index', :id => webpage.category_id , 
+    	:body => webpage.id, :user_name => session[:user].login %>
+	</td>
+    <td> <%= webpage.description %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<% end %>
+
+<br /><br /><br />
+

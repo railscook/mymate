@@ -1,0 +1,8 @@
+<li id="category_<%= category.id %>"> 
+<%= link_to category.title , :action => 'show', :id => category.id %> 
+<%= "(#{category.webpages.count})" -%><small>
+<%= link_to_remote 'Delete',
+:url => {:action => 'delete', :id => category},
+:confirm => "Are you sure that you want to delete this category category?" -%>
+</small> 
+</li> 

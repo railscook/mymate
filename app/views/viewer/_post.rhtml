@@ -1,0 +1,14 @@
+
+	<table id='blog'><tr><td> 
+	    <h2><%= link_to post.title , :action => 'blog_show', :id => post, :cid => -100 , 
+	    	:user_name => @user_name %></h2> 
+	    <small> << Click Here to Read my blog and Leave Comments </small>
+	    
+	<hr/>
+	<small>
+	    	<%= post.created_at.to_s(:long) %>
+	    	<!-- if user is Admin, user can see edit -->
+			<!-- if user is not Admin, user cannot do anything even cannot see edit, they can only post -->
+	    	<!-- end -->
+	    	</small>
+	</td></tr></table> <br/>

@@ -1,0 +1,8 @@
+<% for column in Footer.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @footer.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @footer %> |
+<%= link_to 'Back', :action => 'list' %>

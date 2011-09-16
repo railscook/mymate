@@ -1,0 +1,27 @@
+<h1>Listing headers</h1>
+
+<% unless @headers.size > 0 %> <br />
+	Sorry, there is no header.
+<% else %>
+<table>
+  <tr>
+    <th> Coding </th>
+    <th> &nbsp; </th>
+    <th> &nbsp; </th>
+    <th> &nbsp; </th>
+  </tr>
+  
+<% for header in @headers %>
+  <tr>
+    <td><%= header.coding %></td>
+    <td><%= link_to 'Show', :action => 'show', :id => header %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => header %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => header }, :confirm => 'Are you sure want to delete this hearder code?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<% end %>
+<br /><br /><br /><br />
+
+<%= link_to 'New header', :action => 'new' %>

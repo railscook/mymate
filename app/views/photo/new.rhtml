@@ -1,0 +1,12 @@
+<%= error_messages_for 'photo' %>
+
+<h1>New photo</h1>
+<% form_tag ({:action => 'create'}, :multipart => true) do %>
+	<p><label for="photo_picture">Picture</label><br />
+	<input type="file" name="photo[url]" /></p>  
+  <%= submit_tag "Upload >>" %>
+<% end %>
+
+<%= link_to 'Back', :action => 'list' %>
+
+

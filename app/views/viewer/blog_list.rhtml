@@ -1,0 +1,12 @@
+<h1> Blog </h1>
+<% unless @blogs.size > 0 %> <br/>
+		
+			Sorry, blog has not created yet.
+
+<% else %>
+	<%= render :partial => "blog", :collection => @blogs.reverse %>
+<% end %>
+
+<br />
+
+<div> <p></p><p></p></div>	

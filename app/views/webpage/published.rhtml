@@ -1,0 +1,36 @@
+<h1>Listing of exisiting web pages</h1>
+<% unless @total > 0 %>  <br/>
+	Sorry, there is no web page to publish.
+<% else %>
+<table>
+  <tr>
+  	<th> File Name</th>
+  	<th> Description</th>
+  	<th> Publication </th>
+  	<th> &nbsp; </th>
+  </tr>
+
+<% for category in @categories %>
+<% @webpages  = category.webpages %>
+	<% for webpage in @webpages %>
+	  <tr>
+	    <td> 
+	    	<%= link_to webpage.file_name, :controller => 'viewer', 
+	    	:action => 'index', :id => webpage.category_id , 
+	    	:body => webpage.id, :user_name => session[:user].login %> <br/>
+	
+		</td>
+		<td> <%= webpage.description %></td>
+		<td> <%= webpage.publish == true %> </td>
+	    <td><%= link_to 'Publication editorial', :action => 'edit_publish', 
+	    	:id => webpage %></td>
+	  </tr>
+	<% end %>
+<% end %>
+</table>
+
+<% end %>
+<br /><br /><br />
+
+<%= link_to 'New Web Page', :action => 'new' %> | 
+<%= link_to 'Upload Web Page', :action => 'upload' %> <br/>

@@ -1,0 +1,23 @@
+<h1>Listing of exisiting web pages</h1>
+
+<table>
+  <tr>
+  	<th> File Name</th>
+  	<th> Description</th>
+  	<th> &nbsp; </th>
+  </tr>
+<% for webpage in @webpages %>
+  <tr>
+    <td> 
+    	<%= link_to webpage.file_name, :controller => 'viewer', 
+    	:action => 'index', :id => webpage.content_id , 
+    	:body => webpage.id %>
+	</td>
+	<td> <%= webpage.description %></td>
+    <td><%= link_to 'Delete', { :action => 'destroy', :id => webpage }, :confirm => 'Are you sure want to delete this?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

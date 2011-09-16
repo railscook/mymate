@@ -1,0 +1,11 @@
+<h1><%=session[:user].login %>'s Wonderful Weblog</h1><br/>
+
+<% unless @blogs.size > 0 %>
+	Sorry, there is no blog yet.
+<% else %>
+<%= render :partial => "blog", :collection => @blogs.reverse %>
+<% end %>
+
+<br/><br/>
+
+<%= link_to 'Post Blog', :action => 'new' %>

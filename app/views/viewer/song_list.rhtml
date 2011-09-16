@@ -1,0 +1,24 @@
+	<h1>Listing songs</h1>
+<% unless @songs.size > 0 %><br/>
+	Sorry, there is no Uploaded Song.
+<% else %>
+	<table>
+	  <tr>
+	    <th> Title </th>
+	    <th> &nbsp; </th>    
+	  </tr>
+	  
+	<% for song in @songs %>
+	  <tr>
+	    <td><a href="<%= song.url %>"> <%= song.title %></td>
+	    <td><%= link_to 'Show', :action => 'song_show', :id => song  ,:cid => -100 , 
+		    	:user_name => @user_name %></td>
+	  </tr>
+	<% end %>
+	</table>
+	
+<% end %>	
+
+<br />
+
+<div> <p></p><p></p></div>	

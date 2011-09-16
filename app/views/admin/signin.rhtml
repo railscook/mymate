@@ -1,0 +1,11 @@
+<font size="16">Please login</font>
+<% form_tag({:controller => 'admin', :action => 'login'}, {:id => "login_form"}) do %> 
+<fieldset> 
+		<label for="admin_login">Login:</label> <br/>
+			<%= text_field :admin, :login -%> <br/>
+		<label for="admin_password">Password:</label> <br/>
+			<%= password_field :admin, :password -%> <br/><br/>
+  <%= submit_tag "Login >>" %>
+<% end %> 
+</fieldset> 
+
