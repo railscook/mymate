@@ -1,0 +1,26 @@
+<h1>Listing songs</h1>
+<% unless @songs.size > 0 %><br/>
+ 	Sorry, there is no song.
+<% else %>
+<table>
+  <tr>
+    <th> Title </th>
+    <th> &nbsp; </th>    
+    <th> &nbsp; </th>    
+    <th> &nbsp; </th>    
+  </tr>
+  
+<% for song in @songs %>
+  <tr>
+    <td><a href="<%= song.url %>"> <%= song.title %></td>
+    <td><%= link_to 'Show', :action => 'show', :id => song %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => song %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => song }, :confirm => 'Are you sure want to delete this song?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<% end %>
+<br /><br /><br />
+
+<%= link_to 'New Song', :action => 'new' %>

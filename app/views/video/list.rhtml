@@ -1,0 +1,27 @@
+<h1>Listing videos</h1>
+<% unless @videos.size > 0 %> <br/>
+	Sorry, there is no video.
+<% else%>
+
+<table>
+  <tr>
+    <th> Title </th>
+    <th> &nbsp; </th>    
+    <th> &nbsp; </th>    
+    <th> &nbsp; </th>    
+  </tr>
+  
+<% for video in @videos %>
+  <tr>
+    <td><a href="<%= video.url %>"> <%= video.title %></td>
+    <td><%= link_to 'Show', :action => 'show', :id => video %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => video %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => video }, :confirm => 'Are you sure want to delete this video?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<% end %>
+<br /><br/><br/>
+
+<%= link_to 'New video', :action => 'new' %>

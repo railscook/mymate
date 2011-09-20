@@ -1,0 +1,8 @@
+<h1>New stylesheet</h1>
+
+<% form_tag :action => 'stylesheet_create' do %>
+  <%= render :partial => 'stylesheet_form' %>
+  <%= submit_tag "Create" %>
+<% end %>
+
+<%= link_to 'Back', :action => 'stylesheet_list' %>

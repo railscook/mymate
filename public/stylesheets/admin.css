@@ -1,0 +1,560 @@
+* {
+margin: 0;
+padding:0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	/*background: #FFFFFF url(/images/hibiscus01.jpg) repeat-x;*/
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #7F6A63;
+}
+
+h1, h2, h3 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: normal;
+	color: #492B21;
+}
+
+h1 {
+	letter-spacing: -1px;
+	font-size: 2.5em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	font-weight: bold;
+}
+
+p, ul, ol {
+	margin-top: 0;
+	margin-bottom: 1.6em;
+	line-height: 180%;
+	font-size: 1.2em;
+}
+
+p {
+}
+
+blockquote {
+	float: right;
+	width: 160px;
+	padding-top: 1.6em;
+	border-top: 1px solid #99cc00;
+	border-bottom: 1px solid #99cc00;
+	text-align: center;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #492B21;
+}
+
+ul {
+}
+
+ol {
+}
+
+table {
+ border: outset 5pt;
+ background: #ccff99;
+ table-layout: fixed;
+}
+
+td {
+  border-bottom: solid 2pt #ffffff;
+  }
+
+th {
+  border-bottom: solid 2pt #ffffff;
+  }
+
+table#pagelayout {
+ border: outset 5pt;
+ 
+}
+
+#pagelayout th {
+  border-bottom: solid 2pt #ffffff;
+  border-right: solid 2pt #ffffff;
+  width: 15%;
+  }
+
+#pagelayout textarea {
+ background: #ffffff;
+ font-size: 12px;
+ font-family: Verdana;
+ color: #000000;
+ width: 200px; 
+ height: 300px; 
+}
+
+
+table#blog {
+ height: 1px;
+}
+
+#blog td{
+ height: 10px;
+}
+
+/* Anchor Tags */
+
+a {
+	border-bottom: 1px dotted #99cc00;
+	text-decoration: none;
+	color: #AC021C;
+}
+
+a:hover {
+	border: none;
+	text-decoration: underling;
+}
+
+small {
+}
+
+hr {
+	/*display: none;*/
+}
+
+img {
+	border: none;
+}
+
+img.left {
+	float: left;
+	margin: 0 15px 0 0;
+}
+
+img.right {
+	float: left;
+	margin: 0 0 0 15px;
+}
+
+ol#faq {
+list-style: decimal inside
+}
+
+div#container {
+width: 760px;
+margin: 0 auto;
+}
+
+/* Menu */
+
+#menu {
+	float: right;
+}
+
+#menu ul {
+	margin-top: -110px;;
+	padding: 118px 0 0 0;
+	list-style: none;
+}
+
+#menu li {
+	display: inline;
+}
+
+#menu a {
+	padding: 0 10px 0 22px;
+	/*background: url(/images/hibiscus03.gif) no-repeat left center;*/
+	font-size: 18px;
+}
+
+#menu .first a {
+	background: none;
+}
+
+#break {
+	display: none;
+}
+
+/* Header */
+
+#header {
+	width: 760px;
+	height: 170px;
+	top: 0;
+	margin: 0 auto;
+	background: #99cc00;
+	text-transform: lowercase;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #FAE6D4;
+}
+
+#header a {
+	border: none;
+	text-decoration: none;
+	color: #FAE6D4;
+}
+
+#header a:hover {
+	text-decoration: underline;
+}
+
+div#headerlinks {
+	float: right;
+	text-align: right;
+	position: relative;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 140%;
+	color: #ffffff;
+}
+
+#headerlinks a {
+	padding: 0 10px 0 22px;
+	/*background: url(/images/hibiscus03.gif) no-repeat left center;*/
+	font-size: 18px;
+	color: #000000;
+}
+
+ul#classifieds {
+list-style-type: none;
+}
+ul#classifieds li {
+background-color: #ececec;
+padding: 5px;
+font-weight:bold;
+line-height: 140%;
+}
+
+/* Logo */
+
+#logo {
+	float: left;
+	padding: 0 0 0 0;
+}
+
+#logo h1 {
+	margin: 0;
+	padding-top: 50px;
+	font-size: 60px;
+}
+
+#logo h2 {
+	margin: 0;
+	font-size: 18px;
+}
+
+/* Page */
+
+#page {
+	width: 760px;
+	margin: 0 auto;
+}
+
+/* Sidebar */
+
+div#sidebar {
+	clear: both;
+	float: left;
+	margin-top: 10px;
+	width: 155px;
+	height: 100%;
+	padding-top: 30px;
+	text-align: left;
+	border-right: 1px dashed #f06;
+}
+
+#sidebar h1 {
+	margin-top: 0;
+	font-size: 1.4em;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+#sidebar h2 {
+	margin-top: 0;
+	font-size: 1.2em;
+	color: #b4b4b4;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+#sidebar ul {
+	padding: 0;
+	list-style: circle;
+}
+
+#sidebar li {
+	/*padding-top: 30px;*/
+	font-size: 0.9em;
+}
+
+#sidebar li ul {
+	padding-left: 15px;
+}
+
+#sidebar li li {
+	padding: 0;
+	padding-left: 15px;
+	/*background: url(/images/hibiscus04.gif) no-repeat left center;*/
+	font-size: .75em;
+}
+
+#sidebar li h2 {
+	margin-top: 0;
+	font-size: 1.4em;
+}
+
+
+#sidebar li a {
+}
+
+#sidebar fieldset {
+	border: none;
+}
+
+/* Content */
+
+div#content {
+	position: relative;
+	float: right;
+	width: 580px;
+	height: 100%;
+	border: none;
+}
+
+div#contentin {
+	clear: both;
+	float: right;
+	width: 580px;
+	padding: 10px;
+}
+
+div#content h3 {
+margin-top: 15px;
+}
+
+#contents {
+	overflow: scroll;
+	width: 550px;
+	text-align: center;
+	padding: 5px;
+	border: 1px solid #ccc;
+	margin-left: 0px; 
+	margin-top: 10px;
+}
+
+ul#contents li {
+display: inline;
+padding-left: 5px;
+}
+
+ul#content_list {
+padding: 20px;
+list-style-type: square;
+}
+
+ul#content_list li {
+line-height: 140%;
+}
+
+table {
+ width: 100%;	
+}
+
+table#contentbody {
+ width: 100%;	
+ border: none;
+ height: 250px;
+ background: transparent;
+}
+
+#contentbody td {
+  /*border: none;*/
+  vertical-align: top;
+  background: transparent;
+}
+
+/* Footer */
+
+#footer {
+	clear: both;
+	position: relative;
+	bottom: 0px;
+	width: 100%;
+	height: 60px;
+	padding-top: 30px;
+	text-align: center;
+	text-decoration: bold;
+	font-size: .9em;
+	color: #800000;
+	background: #99cc00;
+}
+	
+#footer a {
+	border: none;
+	color: #000000;
+}
+
+#footer a:hover {
+	border: none;
+	color: #000000;
+	text-decoration: underline;
+}
+
+/* Contact user */
+
+div #contacts{
+	position: absolute;
+}
+div#contact_user {
+padding: 10px;
+}
+div#contact_seller input {
+margin-top: 5px;
+}
+
+div#email {
+padding: 10px;
+border: 1px solid #cecece;
+background-color: #ececec;
+}
+
+fieldset {
+display: block;
+width: 255px;
+margin: 20px;
+padding: 10px;
+/* background-color: #eee; */
+}
+fieldset > label {
+display: block;
+margin-bottom: 2px;
+font-weight: bold;
+}
+
+#register {
+display: block;
+width: 435px;
+margin: 20px;
+padding: 10px;
+/* background-color: #eee; */
+}
+
+#reg {
+border: 0;	
+background: transparent;
+}
+form #login_form, #signup_form{
+border: 1px solid #ccc;
+width: 150px;
+padding: 3px;
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+form label {
+font-size: 13px;
+}
+form input[type=text],
+form input[type=password] {
+width: 150px;
+}
+
+form input{
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+div.vcard {
+margin: 5px;
+padding: 15px;
+border: 1px solid #ccc;
+font-size: 13px;
+}
+span.fn {
+font-weight: bold;
+font-size: 13px;
+width: 100%;
+display: block;
+}
+a.email {
+width: 100%;
+display: block;
+padding-top: 5px;
+}
+
+a.admintools {
+font-size: 13px;
+margin-right: 3px;
+color: #333;
+}
+
+div#loading {
+padding: 5px;
+background-color: #ffffcc;
+border: 1px solid #ececec;
+}
+div#loading p {
+font-weight: bold;
+font-size: 13px;
+}
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: inline;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* Sitemap */
+
+#sitemap {
+	clear: both;
+}
+
+#sitemap ul {
+	margin-top: -110px;;
+	padding: 118px 0 0 0;
+}
+
+#sitemap li {
+	font-size: 13px;
+}
+
+#sitemap a {
+	padding: 0 10px 0 22px;
+	/*background: url(/images/hibiscus03.gif) no-repeat left center;*/
+	font-size: 13px;
+}
+
+#date {
+	position: relative;	
+	margin-top: -15px;
+	margin-left: 690px;	
+	padding: 0;
+}

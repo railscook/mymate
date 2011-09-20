@@ -1,0 +1,319 @@
+* {
+margin: 0;
+padding:0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #FFFFFF url(images/img01.gif) repeat-x;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 13px;
+	color: #666666;
+}
+
+form {
+	margin: 0;
+	padding: 0;
+}
+
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+input, textarea, select {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 13px;
+	color: #666666;
+	margin-bottom: 5px;
+}
+
+
+h1, h2, h3 {
+	margin: 0;
+	font-weight: normal;
+	color: #4F789F;
+}
+
+h1 {
+	letter-spacing: -1px;
+	font-size: 2.6em;
+}
+
+h2 {
+	font-size: 1.8em;
+}
+
+h3 {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+p, ul, ol {
+	margin-bottom: 1.6em;
+}
+
+
+ol#faq {
+list-style: decimal inside
+}
+
+blockquote {
+	font-style: italic;
+}
+
+div#container {
+width: 760px;
+margin: 0 auto;
+/* background: #FFFFFF url(/images/img01.gif) repeat-x; */
+}
+/* Anchor Tags */
+
+
+a:hover {
+	text-decoration: none;
+}
+
+a:link, a:active, a:visited {
+	color: #4F789F;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+
+
+/* Header */
+
+div#header {
+	width: 900px;
+	height: 300px;
+	margin-top: -30px;	
+	margin-left: 55px;	
+	text-align: center;
+	padding: 10 40px;
+	background: url(/images/img03.jpg) no-repeat center bottom;
+}
+
+div#content {
+float: left;
+width: 750px;
+padding: 10px;
+}
+
+
+div#headerlinks {
+text-align: right;
+float: right;
+width: 250px;
+padding: 10px;
+}
+
+
+div#content h3 {
+margin-top: 15px;
+}
+
+ul#classifieds {
+list-style-type: none;
+}
+ul#classifieds li {
+background-color: #ececec;
+padding: 5px;
+font-weight:bold;
+line-height: 140%;
+}
+
+div#sidebar {
+width: 500px;
+margin-left: 0px;
+}
+
+/* Logo */
+
+#logo {
+	clear: both;
+	width: 900px;
+	height: 200px;
+}
+
+#logo h1, #logo h2 {
+	position: relative;
+	margin-top: 30px;	
+	text-transform: lowercase;
+	font-style: italic;
+}
+
+#logo h1 {
+	padding: 70px 0 0 0;
+	top: 60px;	
+	font-size: 4em;
+}
+
+#logo h2 {
+	padding: 0 0 0 100px;
+	top: 18px;
+	font-size: 2em;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #479EF3;
+}
+
+/* Menu */
+
+#menu {
+	width: 1000px;
+	height: 100px;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 25px 0;
+	list-style: none;
+	
+	position: absolute;
+	left: 60px; top: -20px;
+}
+
+#menu li {
+	
+	display: inline;
+	width: 900px;
+	height: 100px;
+	
+
+}
+
+#menu a {
+	display: block;
+	float: left;
+	width: 150px;
+	height: 38px;
+	padding: 12px 0 0 0;
+	text-align: center;
+	text-decoration: none;
+	text-transform: lowercase;
+	font-size: 1.8em;
+	background: #B3EAFD url(/images/img02.jpg) no-repeat;
+}
+
+#menu .active a {
+	background: #B3EAFD url(/images/img02.jpg) no-repeat;
+}
+
+/* Page */
+
+#page {
+	width: 900px;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+/*  Categories, Contents */
+
+#categories {
+width: 700px;
+text-align: center;
+padding: 5px;
+background-color: #ececec;
+border: 1px solid #ccc;
+margin-bottom: 20px;
+}
+
+ul#categories li {
+display: inline;
+padding-left: 5px;
+}
+
+ul#category_list {
+padding: 20px;
+list-style-type: square;
+}
+
+ul#category_list li {
+line-height: 140%;
+}
+
+div#contact_seller {
+padding: 10px;
+}
+div#contact_seller input {
+margin-top: 5px;
+}
+
+div#email {
+padding: 10px;
+border: 1px solid #cecece;
+background-color: #ececec;
+}
+
+fieldset {
+display: block;
+width: 255px;
+margin: 20px;
+padding: 10px;
+background-color: #eee;
+}
+fieldset > label {
+display: block;
+margin-bottom: 2px;
+font-weight: bold;
+}
+
+form#login_form {
+border: 1px solid #ccc;
+width: 150px;
+padding: 3px;
+}
+form#login_form label {
+font-size: 13px;
+}
+form#login_form input[type=text],
+form#login_form input[type=password] {
+width: 150px;
+}
+
+div#sidebar {
+width: 200px;
+margin-right: 10px;
+margin-top: -120px;
+}
+
+div.vcard {
+margin: 5px;
+padding: 15px;
+border: 1px solid #ccc;
+background-color: #ececec;
+font-size: 13px;
+}
+span.fn {
+font-weight: bold;
+font-size: 13px;
+width: 100%;
+display: block;
+}
+a.email {
+width: 100%;
+display: block;
+padding-top: 5px;
+}
+
+a.admintools {
+font-size: 13px;
+margin-right: 3px;
+color: #333;
+}
+
+div#loading {
+padding: 5px;
+background-color: #ffffcc;
+border: 1px solid #ececec;
+}
+div#loading p {
+font-weight: bold;
+font-size: 13px;
+}

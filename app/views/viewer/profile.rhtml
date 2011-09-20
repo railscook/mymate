@@ -1,0 +1,30 @@
+<% for user in @user %>
+
+<h1>Profile: <%= user.login -%></h1>
+<div class="vcard"> 
+<% columns = User.content_columns.reject {|c|['login', 'password', "pw", "email", "dob"].include?(c.name) } %>
+<% for column in columns %>
+
+	<% unless column.name == 'email' %>
+		<p>
+		  <b><%= column.human_name %>:</b> <%=h user.send(column.name) %>
+		</p>
+	<% else %>
+		<% if column.name == 'email' %>
+		<p>
+		 <b><%= column.human_name %>:</b> 
+			<%= mail_to user.email , "My email", :cc => "somebody[at]mymate.com", 
+			:bcc => "someone[at]mymate.com", 
+			:subject => "Greeting!", 
+			:body => "Hi #{user.login}, 
+			
+			I send this email to you because.....,
+			.......................................,
+			
+			bye" %>
+		</p>
+		<% end %>
+	<% end %>
+<% end %>
+</div>
+<% end %>

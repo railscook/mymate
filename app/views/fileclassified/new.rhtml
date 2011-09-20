@@ -1,0 +1,14 @@
+
+
+<h1>New file</h1>
+<fieldset>
+<% form_tag ({:action => 'create'}, :multipart => true) do %>
+ <%= error_messages_for 'fileclassified' %> 
+	<p><label for="fileclassified_url">File</label><br/>
+	<input type="file" name="fileclassified[url]" /><br /><br/>
+  <%= submit_tag "Upload" %><br/>
+<% end %>
+</fieldset>
+
+<%= link_to 'Back', :action => 'list' %>
+

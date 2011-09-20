@@ -1,0 +1,7 @@
+if @content.new_record? 
+  page.alert @content.errors.full_messages.join("\n")
+else
+  page.insert_html :bottom, 'content_list', :partial => 'content' 
+  page.visual_effect :highlight, "content_#{@content.id}" 
+  page.form.reset 'content_form' 
+end

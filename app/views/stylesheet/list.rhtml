@@ -1,0 +1,27 @@
+<h1>Listing stylesheets</h1>
+<% unless @stylesheets.size > 0 %> <br/>
+	Sorry, there is no stylesheet.
+<% else %>	
+<table>
+  <tr>
+    <th> Name </th>
+    <th> &nbsp; </th>
+    <th> &nbsp; </th>
+    <th> &nbsp; </th>
+  </tr>
+  
+<% for stylesheet in @stylesheets %>
+  <tr>
+    <td><%= stylesheet.name %></td>
+    <td><%= link_to 'Show', :action => 'show', :id => stylesheet %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => stylesheet %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => stylesheet }, :confirm => 'Are you sure want to delete this stylesheet?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<% end %>
+<br /><br /><br />
+
+<%= link_to 'New stylesheet', :action => 'new' %>
+

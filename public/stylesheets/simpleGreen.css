@@ -1,0 +1,173 @@
+* {
+margin: 0;
+padding:0;
+}
+body {
+font-family: Helvetica, Geneva, Arial, sans-serif;
+font-size: small;
+font-color: #009933;
+background-color: #fff;
+}
+
+
+a:link, a:active, a:visited {
+color: #31C1C1; 
+}
+
+a:hover {
+color: #F70000;
+}
+
+div#header {
+text-align: center;
+padding-bottom: 15px;
+color: #009999;
+}
+
+#categories {
+width: 700px;
+text-align: center;
+padding: 5px;
+background-color: #D9FFE7;
+border: 1px solid #ccc;
+margin-bottom: 20px;
+}
+
+ul#categories li {
+display: inline;
+padding-left: 5px;
+}
+
+ul#category_list {
+padding: 20px;
+list-style-type: square;
+}
+
+ul#category_list li {
+line-height: 140%;
+}
+
+
+ol#faq {
+list-style: decimal inside
+}
+
+input { margin-bottom: 5px;}
+p { line-height: 150%; }
+div#container {
+width: 760px;
+margin: 0 auto;
+}
+div#content {
+float: left;
+width: 750px;
+padding: 10px;
+}
+
+
+div#headerlinks {
+text-align: right;
+float: right;
+width: 250px;
+padding: 10px;
+}
+
+
+div#content h3 {
+margin-top: 15px;
+}
+
+ul#classifieds {
+list-style-type: none;
+}
+ul#classifieds li {
+background-color: #ececec;
+padding: 5px;
+font-weight:bold;
+line-height: 140%;
+}
+
+div#sidebar {
+width: 500px;
+margin-left: 0px;
+}
+
+div#contact_user {
+padding: 10px;
+}
+div#contact_seller input {
+margin-top: 5px;
+}
+
+div#email {
+padding: 10px;
+border: 1px solid #cecece;
+background-color: #ececec;
+}
+
+fieldset {
+display: block;
+width: 255px;
+margin: 20px;
+padding: 10px;
+background-color: #eee;
+}
+fieldset > label {
+display: block;
+margin-bottom: 2px;
+font-weight: bold;
+}
+
+form#login_form {
+border: 1px solid #ccc;
+width: 150px;
+padding: 3px;
+}
+form#login_form label {
+font-size: 80%;
+}
+form#login_form input[type=text],
+form#login_form input[type=password] {
+width: 150px;
+}
+
+div#sidebar {
+width: 200px;
+margin-right: 10px;
+margin-top: -120px;
+}
+
+div.vcard {
+margin: 5px;
+padding: 15px;
+border: 1px solid #ccc;
+background-color: #ececec;
+font-size: 120%;
+}
+span.fn {
+font-weight: bold;
+font-size: 110%;
+width: 100%;
+display: block;
+}
+a.email {
+width: 100%;
+display: block;
+padding-top: 5px;
+}
+
+a.admintools {
+font-size: 75%;
+margin-right: 3px;
+color: #333;
+}
+
+div#loading {
+padding: 5px;
+background-color: #ffffcc;
+border: 1px solid #ececec;
+}
+div#loading p {
+font-weight: bold;
+font-size: 110%;
+}

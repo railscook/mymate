@@ -1,0 +1,23 @@
+	<h1>Listing videos</h1>
+<% unless @videos.size > 0 %><br/>
+	Sorry, there is no Uploaded Videos.
+<% else  %>	
+	<table>
+	  <tr>
+	    <th> Links To Download Video </th>
+	    <th> &nbsp; </th>    
+	  </tr>
+	  
+	<% for video in @videos %>
+	  <tr>
+	    <td align="center"> <a href="<%= video.url %>"> <%= video.title %></td>
+	    <td><%= link_to 'Window Media Player', :action => 'video_show', :id => video  ,:cid => -100 , 
+		    	:user_name => @user_name %></td>
+	  </tr>
+	<% end %>
+	</table>
+	
+<% end %>	
+<br />
+
+<div> <p></p><p></p></div>	

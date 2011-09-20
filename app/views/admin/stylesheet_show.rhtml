@@ -1,0 +1,8 @@
+<% for column in Stylesheet.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @stylesheet.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'stylesheet_edit', :id => @stylesheet %> |
+<%= link_to 'Back', :action => 'stylesheet_list' %>

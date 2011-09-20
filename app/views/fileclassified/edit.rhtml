@@ -1,0 +1,17 @@
+<h1>Editing fileclassified</h1><br/>
+
+<fieldset>
+<% form_tag ({:action =>'update', :id => @fileclassified}, :multipart => true) do %>
+ <%= error_messages_for 'fileclassified' %> 
+	<h3> File Name:  </h3>
+	<%= @fileclassified.name %>
+<br/><br/>
+	<input type="file" name="fileclassified[url]" /><br /><br/>
+  <%= submit_tag "Edit" %><br/>
+<% end %>
+</fieldset>
+
+
+<br/>
+<%= link_to 'Show', :action => 'show', :id => @fileclassified %> |
+<%= link_to 'Back', :action => 'list' %>

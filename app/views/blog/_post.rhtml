@@ -1,0 +1,14 @@
+<table><tr><td> 
+    <h2><%= link_to post.title , :action => 'show', :id => post %></h2>
+   <%= post.body %>
+<hr/>
+
+    	<%= post.created_at.to_s(:long) %>
+    	<!-- if user is Admin, user can see edit -->
+<small>
+		(<%= link_to 'Edit', :action => 'edit', :id => post %> |
+    	<%= link_to 'Destroy', { :action => 'destroy', :id => post }, :confirm => 'Are you sure want to delete this blog?', :method => :post %>)
+		<!-- if user is not Admin, user cannot do anything even cannot see edit, they can only post -->
+    	<!-- end -->
+</small>
+</td></tr></table> <br/>

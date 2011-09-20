@@ -1,0 +1,20 @@
+<h1>Profile: <%= @user.login -%></h1>
+<div class="vcard"> 
+
+<% for column in User.content_columns %>
+	<% unless column.name == 'login' or  column.name == 'password'  or  column.name == 'pw' or column.name == 'email'%>	
+		<p>
+		  <b><%= column.human_name %>:</b> <%=h @user.send(column.name) %>
+		</p>
+	<% else %>
+		<% if column.name == 'email' %>
+		<p>
+		 <b><%= column.human_name %>:</b> 
+			<%= mail_to @user.email %>
+		</p>
+		<% end %>
+	<% end %>
+<% end %>
+</div>
+
+<h2> <%= link_to 'Edit', :action => 'edit', :id => @user %> <h2>

@@ -1,0 +1,2 @@
+page.alert 'Message successfully sent.'
+page.hide 'email'

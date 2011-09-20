@@ -1,0 +1,23 @@
+<h1>Search Friends</h1>
+
+<% if @contacts.blank? %>
+<p>There are not any user currently in the system.</p>
+<% else %>
+
+
+<h3> 
+	Search: 
+	<%= text_field "contact", "avator" -%>
+	<%= observe_field :contact_avator,
+	:frequency => 1.0,
+	:update => 'contacts',
+	:url => { :controller => 'friend', :action=> 'search' },
+	:with => "'search=' + encodeURIComponent(value)"
+	%>
+</h3>
+
+<ul id="contacts">
+		<%= render :partial => 'contact', :collection => @contacts %> 
+	</ul>
+<% end %>
+<br />

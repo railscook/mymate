@@ -1,0 +1,11 @@
+<h1>Profile: <%= @user.login -%></h1>
+<div class="vcard"> 
+
+<% for column in User.content_columns %>
+<% unless column.name == 'login' or  column.name == 'password' %>	
+<p>
+  <b><%= column.human_name %>:</b> <%=h @user.send(column.name) %>
+</p>
+<% end %>
+<% end %>
+</div>

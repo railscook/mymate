@@ -1,0 +1,34 @@
+<!-- rpo tab -->
+
+	<table id='blog'><tr><td> 
+	    <h2><%= @blog.title %></h2> 
+	    
+	    <%= @blog.body %>
+	<hr/>
+	<small>
+	    	<%= @blog.created_at.to_s(:long) %>
+	    	</small>
+	</td></tr></table> <br/>
+
+
+<!-- forin tab -->
+
+<!-- Comments List -->
+<h2> <%= @blog.comments.count %> Comments </h2><br/>
+<% for comment in @blog.comments %>
+	<table id="comments"><tr><td>
+	<%= comment.body %> 
+	
+	<div align="right"> <small> <i>by 
+
+<%= mail_to comment.email, comment.user_name -%> at </i> <%= comment.created_at.to_s(:long) %></small> </div>
+	
+	</td></tr></table>
+<% end %>
+
+<!-- New Comment Form -->
+<h2> Leave a comment </h2>
+<%= form_tag :action => "comment", :id => @blog, :cid => -100 , :user_name => @user_name %>
+	<%= render :partial => "comment" %>
+<%= submit_tag "Submit Comment" %>
+</form>

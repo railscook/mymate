@@ -1,0 +1,28 @@
+<p> Dear <%= @user.title.capitalize %> 
+					<%= @user.fname.capitalize %> 
+					<%= @user.lname.capitalize %>, </p>
+
+<p>Welcome to <a href="http://mymate.itbaybay.com">MyMate</a>!
+	 Thank you for your registration at MyMate. 
+	 Congratulations! You have successfully created an account. 
+	 Your account information is as following: </p>
+
+<p>.............................................</p>
+
+<p>
+	<b>
+		Login: <%= @user.login %> <br/>
+		Password: <%= @user.pw %>
+	</b>
+</p>
+
+<p>.............................................</p>
+
+<p>
+	Best Regards, <br/>
+	<i>Administrator</i>
+</p>
+
+<p>
+	<small><a href="http://mymate.itbaybay.com">http://mymate.itbaybay.com</a></small>
+</p>

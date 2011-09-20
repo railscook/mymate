@@ -1,0 +1,21 @@
+
+<table><tr><td> 
+    <h2><%= link_to blog.title , :action => 'show', :id => blog %></h2>
+   <%#= ellipsis(blog.body, 100) %>
+<hr/>
+
+    	<%= blog.created_at.to_s(:long) %>
+    	<!-- if user is Admin, user can see edit -->
+<small>
+(
+        <%= link_to 'Edit', :action => 'edit', :id => blog %> |
+        <% hide_status = blog.hidden_at ? "unhide" : "hide" %>
+        <%= link_to hide_status.capitalize, { :action => "change_hide_status", :id => blog }, 
+            :confirm => "Are you sure want to #{hide_status} this blog from the public view?", 
+            :method => :post %> |
+    	<%= link_to 'Destroy', { :action => 'destroy', :id => blog }, :confirm => 'Are you sure want to delete this blog?', :method => :post %>
+)
+		<!-- if user is not Admin, user cannot do anything even cannot see edit, they can only blog -->
+    	<!-- end -->
+</small>
+</td></tr></table> <br/>

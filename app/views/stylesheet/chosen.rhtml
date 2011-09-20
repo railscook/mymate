@@ -1,0 +1,8 @@
+<h1> Chosen Stylesheet</h1>
+
+<fieldset>
+<p><label for="stylsheet_selected">Current Stylesheet: <b><%= @selected.name %> </b></label>
+</p>
+</fieldset>
+
+<%= link_to 'Stylesheet Menus', :action => 'menu',  :id => "#{session[:user].id}" %>

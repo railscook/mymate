@@ -1,0 +1,8 @@
+<li id="content_<%= content.id %>"> 
+<%= link_to content.title , :action => 'show', :id => content.id %> 
+<%= "(#{content.create_new_files.count})" -%><small>
+<%= link_to_remote 'Delete',
+:url => {:action => 'delete', :id => content},
+:confirm => "Are you sure that you want to delete this content category?" -%>
+</small> 
+</li> 

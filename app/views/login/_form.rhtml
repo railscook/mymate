@@ -1,0 +1,50 @@
+<%= error_messages_for 'user' %>
+
+<!--[form:user]-->
+
+<table id="reg">
+<tr> <td width="30%"> <label for="user_title">Title:</label></td><td valign="top">
+	<%= select("user", "title", %w( Mr Mrs Ms U Daw Ko Mg Ma ))%>
+</td> </tr>
+
+<tr> <td> <label for="user_fname">First name:</label></td><td valign="top">
+<%= text_field 'user', 'fname'  %>*</td> </tr>
+
+<tr> <td> <label for="user_lname">Last name:</label></td><td valign="top">
+<%= text_field 'user', 'lname'  %>*</td> </tr>
+
+<tr> <td> <label for="user_gender">Gender:</label></td><td valign="top">
+	<%= radio_button 'user', 'gender', 'Male' %> Male
+	<%= radio_button 'user', 'gender', 'Female' %> Female
+
+</td> </tr>
+
+<tr> <td> <label for="user_dob">Date of birth:</label></td><td valign="top">
+<%= date_select 'user', 'dob' , :end_year => Date.today.year-100 , :start_year => Date.today.year %>*</td> </tr>
+
+<tr> <td> <label for="user_country">Country:</label></td><td valign="top">
+<%= country_select 'user','country',["United Kingdom", "United States", "China", "Myanmar"] %></td> </tr>
+
+<tr> <td> <label for="user_login">Login Name:</label></td><td valign="top">
+<%= text_field 'user', 'login'  %>*</td> </tr>
+
+<tr> <td colspan="2"> 
+&nbsp;&nbsp; &nbsp;  ***(This name should be used whenever you use a system.)*
+</td></tr>
+
+
+<tr> <td> <label for="user_password">Password:</label></td><td valign="top">
+<%= password_field 'user', 'password'  %>*</td> </tr>
+
+<tr> <td> <label for="user_email">Email:</label></td><td valign="top">
+<%= text_field 'user', 'email'  %>*</td> </tr>
+
+<tr> <td>
+<label for="user_email_confirmation">Confirm Email: </label> </td> 
+<td><%= text_field :user, :email_confirmation -%>*</td> </tr> </td> </tr> 
+
+<tr> <td colspan="2"> (*) means you must fill </td> </tr>
+
+</table>
+<!--[eoform:user]-->
+

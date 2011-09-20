@@ -1,0 +1,11 @@
+<%= error_messages_for 'content' %>
+
+<!--[form:content]-->
+
+<p><label for="content_title">Title</label><br/>
+<%= text_field 'content', 'title'  %></p>
+
+<p><label for="content_publish">Publish</label><br/>
+<select id="content_publish" name="content[publish]"><option value="false">False</option><option value="true" selected>True</option></select></p>
+<!--[eoform:content]-->
+

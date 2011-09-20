@@ -1,0 +1,16 @@
+<%= error_messages_for 'video' %>
+
+<!--[form:video]-->
+<p><label for="video_title">Title</label><br/>
+<%= text_field 'video', 'title'  %></p>
+
+<p><label for="video_description">Description</label><br/>
+<%= text_area 'video', 'description'  %></p>
+
+<p><label for="video_video_type">Video Type</label><br/>
+<%= text_field 'video', 'video_type'  %></p>
+
+<p><label for="video_url">Url</label><br/>
+<input type="file" name="video[url]" /></p>
+<!--[eoform:video]-->
+

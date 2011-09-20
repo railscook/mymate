@@ -1,0 +1,9 @@
+<h1>Editing stylesheet</h1>
+
+<% form_tag :action => 'update', :id => @stylesheet do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Edit' %>
+<% end %>
+
+<%= link_to 'Show', :action => 'show', :id => @stylesheet %> |
+<%= link_to 'Back', :action => 'list' %>

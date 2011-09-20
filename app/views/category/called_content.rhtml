@@ -1,0 +1,3 @@
+<li id="category<%= category.id %>">
+<%= link_to category.title, :action => 'show', :id => category.id %>
+<%= "(#{category.webpages.count})" -%></li>

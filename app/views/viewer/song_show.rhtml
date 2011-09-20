@@ -1,0 +1,13 @@
+
+<p>
+	<h1> <%= @song.title %> Lyrics </h1><br/>
+	<marquee direction="up" scrollamount="2" width="300">
+		<%= @song.lyric %>
+	</marquee><br/><br/><br/>
+	Links to download <%= link_to @song.url %> <br/><br/><br/>
+	
+    <a href="<%= @song.url %>"> 
+    <%= @song.title %>
+	</a><br/><br/><br/>
+  
+

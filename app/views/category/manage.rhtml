@@ -1,0 +1,19 @@
+<h1>Content Categories</h1> 
+
+<% unless @categories.size > 0 %>
+	Sorry, there is no category category.
+<% else %>
+<ul id="category_list"> 
+	<%= render :partial => 'category', :collection => @categories %> 
+</ul> 
+<% end %>
+<p id="add_link"><%= link_to_function("Add a category", "Element.remove('add_link');Element.show('add_category')")%></p> 
+
+<div id="add_category" style="display:none;"> 
+	<% form_tag(:url => {:action => 'new'}, 
+	:html => {:id => 'category_form'}) do %> 
+	Name: <%= text_field "category", "title" %> 
+	<%= submit_tag 'Add' %> 
+	<% end %> 
+</div> 
+

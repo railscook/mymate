@@ -1,0 +1,27 @@
+<ul>
+<%    
+    @classes = Hash.new;
+    <span class="newWikiWord">ObjectSpace<a href="http://wiki.rubyonrails.org/rails/pages/ObjectSpace">?</a></span>.each_object(ActionController::Base) { |obj|  
+        @classes["#{obj.class}"] = obj
+    }
+
+    @classes.each_value { |c|
+        @cname = c.controller_name
+%>
+    <li><%= link_to "#{@cname}",  { :action => "index", :controller => "#{@cname}" } %></li>
+    <ul style="font-size:1em">
+<%    
+        @methods = c.class.instance_methods(false)        
+        @methods.sort.each { |m| 
+            @mname = m.to_s
+            next if @mname == "index" 
+%>
+        <li><%=link_to "#{@mname}", { :action => "#{@mname}", :controller => "#{@cname}" } %></li>
+<%        
+        }
+%>
+    </li></ul>
+<% 
+    } 
+%>
+</ul>

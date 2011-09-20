@@ -1,0 +1,25 @@
+<h1>Search Blogs</h1>
+<% if @blogs.blank? %>
+<p> No New Blog.</p>
+<% else %>
+
+
+<h3> 
+	Search: 
+	<%= text_field "blog", "title" -%>
+	<%= observe_field :blog_title,
+	:frequency => 1.0,
+	:update => 'blogs',
+	:url => {:controller => 'blog', :action=> 'search',:only_path => false },
+	:method => 'get',
+	:with => "'search='+ encodeURIComponent(value)"	%>
+</h3>
+
+<div id="blogs">
+ <%= render :partial => 'myblog' #, :collection => @blogs 
+ %> 
+</div>
+<% end %>
+
+
+<br />

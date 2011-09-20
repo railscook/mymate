@@ -1,0 +1,35 @@
+<h1>Listing photos</h1>
+
+<% unless @photos.size > 0 %><br/>
+	Sorry, there is no Uploaded Image.
+<% else %>	
+<table>
+  <tr>
+    <th> Picture Name </th>
+    <th> Photo </th>
+    <th> &nbsp; </th>
+    <th> &nbsp; </th>
+  </tr>
+  
+<% for photo in @photos %>
+  <tr>
+    <td><%= photo.picture_name %></td>
+    <td>
+    	<% unless photo.url.blank? %>
+			<%= link_to image_tag(url_for(photo.url),
+			 :size => '100x100') ,  :action => 'show', :id => photo.id %>
+		<% end %>
+	</td>
+			 
+    <td><%= link_to 'Edit', :action => 'edit', :id => photo %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => photo }, :confirm => 'Are you sure want to delete this photo?', :method => :post %></td>
+
+  </tr>
+<% end %>
+</table>
+
+<% end %>
+<br /><br /><br />
+
+<%= link_to 'New Photo', :action => 'new' %>
+

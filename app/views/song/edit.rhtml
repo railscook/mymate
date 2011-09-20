@@ -1,0 +1,10 @@
+<h1>Editing song</h1>
+
+<% form_tag ({:action => 'update', :id => @song}, :multipart => true) do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag "Edit" %><br/>
+<% end %>
+
+
+<%= link_to 'Show', :action => 'show', :id => @song %> |
+<%= link_to 'Back', :action => 'list' %>

@@ -1,0 +1,18 @@
+<p>
+  <b>Question:</b>
+  <%=h @faq.question %>
+</p>
+
+<p>
+  <b>Question type:</b>
+  <%=h @faq.question_type %>
+</p>
+
+<p>
+  <b>Answer:</b>
+  <%=h @faq.answer %>
+</p>
+
+
+<%= link_to 'Edit', edit_faq_path(@faq) %> |
+<%= link_to 'Back', faqs_path %>

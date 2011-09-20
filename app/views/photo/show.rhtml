@@ -1,0 +1,23 @@
+
+<p><label for="photo_name">Picture Name: </label>
+<%= @photo.picture_name %>
+</p>
+
+<% unless @photo.url.blank? %>
+<%= image_tag(url_for(@photo.url), :size => '500x500') -%>
+<% end %>
+
+<p align="right">
+<%= link_to 'Edit', :action => 'edit', :id => @photo %> |
+<%= link_to 'Back', :action => 'list' %>  <br/>
+<!--<%= link_to_function('E-mail to a friend', "Element.show('email')") %> -->
+</p>
+<br/>
+
+<div id="email" style="display: none;">
+	<% form_remote_tag(:url => {:action => 'email', :id => @photo.id}, :multipart => true) do -%>
+	E-mail: <%= text_field "user", "email" -%><br />
+	<%= submit_tag 'Email photo' -%>
+	<% end -%>
+</div>
+

@@ -1,0 +1,23 @@
+<%= error_messages_for 'webpage' %>
+
+<!--[form:webpage]-->
+<p><label for="webpage_file_name"><br/>File:</label>
+<%= text_field 'webpage', 'file_name'  %> 
+<small>*Fill your file name only, no need to fill extension(html) </small>
+
+<p><label for="webpage_description">Description:</label>
+<%= text_field 'webpage', 'description'  %></p>
+
+<hr/>
+
+<h3> Directory Drop-down Box Lists: </h3>
+<fieldset>
+<p><label for="content_category">Content Directory: </label>
+<%= collection_select(:webpage, :category_id, @categories, :id, :title) %> <br/>
+<small><%= link_to 'Content Setting', :controller => 'category' %> </small>
+</p>
+</fieldset>
+<hr/>
+</p>
+
+<%= fckeditor_text_field( "webpage", "text" ) %>

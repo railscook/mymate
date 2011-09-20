@@ -1,0 +1,11 @@
+<font size="16">FAQ</font>
+
+<ol id="faq">
+  <% for faq in @faq %>
+  <li> <%= link_to_function faq.question, "$('faq_#{faq.id}').toggle();"%> 
+   <div style='display: none' id="<%= "faq_#{faq.id}"%>">
+     <%= faq.answer %>
+   </div>
+  </li>
+  <% end %>
+</ol>

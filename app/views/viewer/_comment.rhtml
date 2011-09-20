@@ -1,0 +1,8 @@
+<%= error_messages_for 'comment' %>
+
+<p><label for="user_name">Name: </label><br/>
+<%= text_field 'comment', 'user_name'  %></p>
+<p><label for="email">Email Address: </label><br/>
+<%= text_field 'comment', 'email'  %></p>
+<p><label for="post_body">Comment:</label><br/>
+<%= fckeditor_text_field( "comment", "body" ) %></p>

@@ -1,0 +1,9 @@
+
+<p><label for="photo_name">Picture Name: </label>
+<%= @photo.picture_name %>
+</p>
+
+<% unless @photo.url.blank? %>
+<%= image_tag(url_for(@photo.url), :size => '550x550') -%>
+<% end %>
+

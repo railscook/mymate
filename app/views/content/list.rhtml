@@ -1,0 +1,30 @@
+	<h1>Listing Categories</h1>
+<% unless @contents.size > 0 %>
+	Sorry there is no category.
+<% else %>	
+<table>
+  <tr>
+  <% for column in Content.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+    <th> &nbsp;</th>
+    <th> &nbsp;</th>
+    <th> &nbsp;</th>
+  </tr>
+  
+<% for content in @contents %>
+  <tr>
+  <% for column in Content.content_columns %>
+    <td><%=h content.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => content %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => content %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => content }, :confirm => 'Are you sure want to delete this content category?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<% end %>
+<br />
+
+<%= link_to 'New category', :action => 'category_new' %>

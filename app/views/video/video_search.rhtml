@@ -1,0 +1,25 @@
+<h1>Search Videos</h1>
+
+<% if @videos.blank? %>
+<p> No New Video.</p>
+<% else %>
+
+
+<h3> 
+	Search: 
+	<%= text_field "video", "title" -%>
+	<%= observe_field :video_title,
+	:frequency => 1.0,
+	:update => 'videos',
+	:url => { :controller => 'video', :action=> 'search' },
+	:with => "'search=' + encodeURIComponent(value)"
+	%>
+</h3>
+
+<div id="videos">
+		<%= render :partial => 'video', :collection => @videos %> 
+	</div>
+<% end %>
+
+
+<br />

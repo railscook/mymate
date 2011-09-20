@@ -1,0 +1,24 @@
+<h1>Editing photo</h1>
+
+<% form_tag ({:action => 'update', :id => @photo},
+:multipart => true) do %>
+
+<%= render :partial => 'form' %>
+  
+	Change Photo<br />
+	<input type="file" name="photo[url]" /></p>
+
+  <%= submit_tag 'Edit' %>
+<% end %>
+
+	<br /><br /><br /><br />
+	<% unless @photo.url.blank? %>
+		<%= image_tag (url_for(@photo.url), :size => '500x500') -%><br /><br />
+	<% end %>
+
+
+<p align="right">
+
+| <%= link_to 'Show', :action => 'show', :id => @photo %> |
+<%= link_to 'Back', :action => 'list' %> |
+</p>

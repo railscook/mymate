@@ -1,0 +1,297 @@
+<!-- Profile -->
+	<p id="sidebar1">
+		<%= link_to_function("User Profile", 
+		"Element.show('sub_sidebarl'); Element.hide('sub_sidebar2'); Element.hide('sub_sidebar3');Element.hide('sub_sidebar4');Element.hide('sub_sidebar5'); Element.hide('sub_sidebar6');Element.hide('sub_sidebar7');Element.hide('sub_sidebar8');Element.hide('sub_sidebar9');Element.hide('sub_sidebar10'); ")%></p> 
+
+<div id="sub_sidebarl" style="display:none;"> 
+<table><tr><td>
+<% for column in User.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @user.send(column.name) %>
+</p>
+<% end %>
+</td></tr></table>
+</div>
+
+
+
+<!-- content category list -->
+	<p id="sidebar2">
+		<%= link_to_function("Listing Category Categories ", 
+		"Element.show('sub_sidebar2'); Element.hide('sub_sidebarl'); Element.hide('sub_sidebar3'); Element.hide('sub_sidebar4'); Element.hide('sub_sidebar5'); Element.hide('sub_sidebar6');Element.hide('sub_sidebar7');Element.hide('sub_sidebar8');Element.hide('sub_sidebar9');Element.hide('sub_sidebar10'); ")%></p> 
+	<div id="sub_sidebar2" style="display:none;"> 
+	<% unless User.find(@user.id).categories.size > 0 %>
+			Sorry, there is no content category. <br/><br/><br/>
+	<% else %>
+		<% for category in User.find(@user.id).categories %>
+		<table>
+		  <tr>
+		  <% for column in Category.content_columns %>
+		    <th><%= column.human_name %></th>
+		  <% end %>
+		  </tr>
+		  <tr>
+		  <% for column in Category.content_columns %>
+		    <td><%=h category.send(column.name) %> </td>
+		  <% end %>
+		  </tr>
+		 
+		 <tr>
+		 	<td> </td>
+		 	<td> 
+			 <!-- webpage list -->
+				<div>
+					<h2>Listing of web pages</h2>
+					<table>
+					  <tr>
+					  	<th> File Name</th>
+					  	<th> Description</th>
+					  </tr>
+					<% for webpage in Category.find(category.id).webpages %>
+					  <tr>
+					    <td> 
+					    	<%= webpage.file_name %> <br/>
+						</td>
+						<td> <%= webpage.description %></td>
+					  </tr>
+					<% end %>
+					</table>
+				</div>
+		 		
+		 	</td>
+		 </tr>
+	    </table>
+	   <% end %>
+	<% end %>
+	</div>
+	
+
+
+
+<!-- photo list -->
+	<p id="sidebar3">
+		<%= link_to_function("Listing Uploaded Photos", 
+		"Element.show('sub_sidebar3'); Element.hide('sub_sidebarl'); Element.hide('sub_sidebar2'); Element.hide('sub_sidebar4'); Element.hide('sub_sidebar5'); Element.hide('sub_sidebar6');Element.hide('sub_sidebar7');Element.hide('sub_sidebar8');Element.hide('sub_sidebar9');Element.hide('sub_sidebar10'); 
+		")%></p> 
+	<div id="sub_sidebar3" style="display:none;"> 
+	<% unless User.find(@user.id).photos.size > 0 %>
+		Sorry, there is no photo. <br/><br/><br/>
+	<% else %>
+		<table>
+		  <tr>
+		  <% for column in Photo.content_columns %>
+		    <th><%= column.human_name %></th>
+		  <% end %>
+		  </tr>
+		  
+		<% for photo in User.find(@user.id).photos %>
+		  <tr>
+		  <% for column in Photo.content_columns %>
+		    <td><%=h photo.send(column.name) %></td>
+		  <% end %>
+		  </tr>
+		 <% end %>
+		</table><br />
+	<% end %>
+	</div>
+
+<!-- file list -->
+	<p id="sidebar4">
+		<%= link_to_function("Listing Uploaded Files", 
+		"Element.show('sub_sidebar4'); Element.hide('sub_sidebarl'); Element.hide('sub_sidebar2'); Element.hide('sub_sidebar3'); Element.hide('sub_sidebar5'); Element.hide('sub_sidebar6');Element.hide('sub_sidebar7');Element.hide('sub_sidebar8');Element.hide('sub_sidebar9');Element.hide('sub_sidebar10'); 
+		")%></p> 
+	<div id="sub_sidebar4" style="display:none;"> 
+	<% unless User.find(@user.id).fileclassifieds.size > 0 %>
+		Sorry, there is no file. <br/><br/><br/>
+	<% else %>
+		<table>
+		  <tr>
+		  <% for column in Fileclassified.content_columns %>
+		    <th><%= column.human_name %></th>
+		  <% end %>
+		  </tr>
+		  
+		<% for fileclassified in User.find(@user.id).fileclassifieds %>
+		  <tr>
+		  <% for column in Fileclassified.content_columns %>
+		    <td><%=h fileclassified.send(column.name) %></td>
+		  <% end %>
+		  </tr>
+		 <% end %>
+		</table><br />
+	<% end %>
+	</div>
+
+<!-- song list -->
+	<p id="sidebar5">
+		<%= link_to_function(" Lisiting Uploaded Songs  ", 
+		"Element.show('sub_sidebar5'); Element.hide('sub_sidebarl'); Element.hide('sub_sidebar2'); Element.hide('sub_sidebar3'); Element.hide('sub_sidebar4'); Element.hide('sub_sidebar6');Element.hide('sub_sidebar7');Element.hide('sub_sidebar8');Element.hide('sub_sidebar9');Element.hide('sub_sidebar10'); 
+		")%></p> 
+	<div id="sub_sidebar5" style="display:none;"> 
+	<% unless User.find(@user.id).songs.size > 0 %>
+		Sorry, there is no song. <br/><br/><br/>
+	<% else %>
+		<table>
+		  <tr>
+		    <th> Title</th>
+		  </tr>
+		  
+		<% for song in User.find(@user.id).songs %>
+		  <tr>
+		    <td><%= song.title %></td>
+		  </tr>
+		 <% end %>
+		</table><br />
+	<% end %>
+	</div>
+
+<!-- video list -->
+	<p id="sidebar6"><%= link_to_function(" Listing Uploaded Videos  ", 
+		"Element.show('sub_sidebar6'); Element.hide('sub_sidebarl'); Element.hide('sub_sidebar2'); Element.hide('sub_sidebar3'); Element.hide('sub_sidebar4'); Element.hide('sub_sidebar5');Element.hide('sub_sidebar7');Element.hide('sub_sidebar8');Element.hide('sub_sidebar9');Element.hide('sub_sidebar10'); 
+		")%></p> 
+	<div id="sub_sidebar6" style="display:none;"> 
+	<% unless User.find(@user.id).videos.size > 0 %>
+		Sorry, there is no video. <br/><br/><br/>
+	<% else %>
+	<table>
+	  <tr>
+	    <th> Title</th>
+	  </tr>
+	  
+	<% for video in User.find(@user.id).videos %>
+	  <tr>
+	    <td><%= video.title %></td>
+	  </tr>
+	 <% end %>
+	</table><br />
+	<% end %>
+</div>
+
+<!-- header list -->
+	<p id="sidebar7"><%= link_to_function("Listing Header ", 
+		"Element.show('sub_sidebar7'); Element.hide('sub_sidebarl'); Element.hide('sub_sidebar2'); Element.hide('sub_sidebar3'); Element.hide('sub_sidebar4'); Element.hide('sub_sidebar5'); Element.hide('sub_sidebar6');Element.hide('sub_sidebar8');
+		Element.hide('sub_sidebar9');Element.hide('sub_sidebar10');
+		")%></p> 
+	<div id="sub_sidebar7" style="display:none;"> 
+	
+	<% unless User.find(@user.id).headers.size > 0 %>
+		Sorry, there is no header. <br/><br/><br/>
+	<% else %>
+	<table>
+	  <tr>
+	    <th> Title</th>
+	  </tr>
+	  
+	<% for header in User.find(@user.id).headers %>
+	  <tr>
+	    <td> Header <%= header.id %></td>
+	  </tr>
+	 <% end %>
+	</table><br />
+	<% end %>
+</div>
+
+<!-- contacts list -->
+	<p id="sidebar8"><%= link_to_function("Listing Footer ", 
+		"Element.show('sub_sidebar8'); Element.hide('sub_sidebarl'); Element.hide('sub_sidebar2'); Element.hide('sub_sidebar3'); Element.hide('sub_sidebar4'); Element.hide('sub_sidebar5'); Element.hide('sub_sidebar6');Element.hide('sub_sidebar7');
+		Element.hide('sub_sidebar9');Element.hide('sub_sidebar10');
+		")%></p> 
+	<div id="sub_sidebar8" style="display:none;"> 
+	<% unless User.find(@user.id).footers.size > 0 %>
+		Sorry, there is no footer. <br/><br/><br/>
+	<% else %>
+	<table>
+	  <tr>
+	    <th> Title</th>
+	  </tr>
+	  
+	<% for footer in User.find(@user.id).footers %>
+	  <tr>
+	    <td> Header <%= footer.id %></td>
+	  </tr>
+	 <% end %>
+	</table><br />
+	<% end %>
+</div>
+
+
+<!-- blog list -->
+	<p id="sidebar9"><%= link_to_function("Listing Blog ", 
+		"Element.show('sub_sidebar9'); Element.hide('sub_sidebarl'); Element.hide('sub_sidebar2'); Element.hide('sub_sidebar3'); Element.hide('sub_sidebar4'); Element.hide('sub_sidebar5'); Element.hide('sub_sidebar6');Element.hide('sub_sidebar7');
+		Element.hide('sub_sidebar8');Element.hide('sub_sidebar10');
+		")%></p> 
+	<div id="sub_sidebar9" style="display:none;"> 
+	<% unless User.find(@user.id).blogs.size > 0 %>
+		Sorry, there is no blog. <br/><br/><br/>
+	<% else %>
+	<table>
+	  <tr>
+	    <th> Title</th>
+	    <th> Created at </th>
+	  </tr>
+	  
+	<% for blog in User.find(@user.id).blogs %>
+	  <tr>
+	    <td> <%= blog.title %></td>
+	    <td> <%= blog.created_at %></td>
+	  </tr>
+	 <tr>
+	 	<td> </td>
+	 	<td> 
+		 <!-- comment list -->
+			<div>
+				<h2>Listing of Comments</h2>
+				<table>
+				  <tr>
+				  	<th> User Name</th>
+				  	<th> Created at</th>
+				  </tr>
+				<% for comment in Blog.find(blog.id).comments %>
+				  <tr>
+				    <td> 
+				    	<%= comment.user_name %> <br/>
+					</td>
+					<td> <%= comment.created_at %></td>
+				  </tr>
+				<% end %>
+				</table>
+			</div>
+	 	</td>
+	 </tr>	
+	 <% end %>
+	 		
+	</table><br />
+	<% end %>
+	</div>
+
+
+<!-- contact list -->
+	<p id="sidebar10"><%= link_to_function("Listing Contact Address ", 
+		"Element.show('sub_sidebar10'); Element.hide('sub_sidebarl'); Element.hide('sub_sidebar2'); Element.hide('sub_sidebar3'); Element.hide('sub_sidebar4'); Element.hide('sub_sidebar5'); Element.hide('sub_sidebar6');Element.hide('sub_sidebar7');
+		Element.hide('sub_sidebar8');Element.hide('sub_sidebar9');
+		")%></p> 
+	<div id="sub_sidebar10" style="display:none;"> 
+	<% unless User.find(@user.id).contacts.size > 0 %>
+		Sorry, there is no contact. <br/><br/><br/>
+	<% else %>
+	<table>
+	  <tr>
+	    <th> Name</th>
+	    <th> Email</th>
+	    <th> Phone</th>
+	  </tr>
+	  
+	<% for contact in User.find(@user.id).contacts %>
+	  <tr>
+	    <td> <%= contact.name %></td>
+	    <td> <%= contact.email %></td>
+	    <td> <%= contact.phone %></td>
+	  </tr>
+	 <% end %>
+	</table><br />
+	<% end %>
+</div>
+
+
+
+<h1> <%= link_to 'Back', :action => 'user_list' %> </h1>

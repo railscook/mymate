@@ -1,0 +1,11 @@
+<%= error_messages_for 'category' %>
+
+<!--[form:category]-->
+
+<p><label for="category_title">Title</label><br/>
+<%= text_field 'category', 'title'  %></p>
+
+<p><label for="category_publish">Publish</label><br/>
+<select id="category_publish" name="category[publish]"><option value="false">False</option><option value="true" selected>True</option></select></p>
+<!--[eoform:category]-->
+

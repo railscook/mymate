@@ -1,0 +1,9 @@
+<h1>Editing header</h1>
+
+<% form_tag :action => 'update', :id => @header do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Edit' %>
+<% end %>
+
+<%= link_to 'Show', :action => 'show', :id => @header %> |
+<%= link_to 'Back', :action => 'list' %>

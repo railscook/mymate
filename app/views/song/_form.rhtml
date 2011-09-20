@@ -1,0 +1,16 @@
+<%= error_messages_for 'song' %>
+
+<!--[form:song]-->
+<p><label for="song_title">Title</label><br/>
+<%= text_field 'song', 'title'  %></p>
+
+<p><label for="song_lyric">Lyric</label><br/>
+<%= fckeditor_text_field( "song", "lyric" ) %></p>
+
+<p><label for="song_song_type">Song Type</label><br/>
+<%= text_field 'song', 'song_type'  %></p>
+
+<p><label for="song_url">Url</label><br/>
+<input type="file" name="song[url]" /></p>
+<!--[eoform:song]-->
+

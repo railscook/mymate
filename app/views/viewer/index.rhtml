@@ -1,0 +1,8 @@
+	
+	<!-- start content -->
+		<div id="contentin"> 
+		<% if @file_id %>
+			<%= Webpage.find(@file_id).text %>
+		<% end %>
+		</div> 
+	<!-- end content -->

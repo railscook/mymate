@@ -1,0 +1,14 @@
+
+<% form_tag ({:action => 'update_publication', :id => @webpage}, :multipart => true) do %>
+
+<!--[form:webpage]-->
+
+<p><label for="webpage_file_name">File Name</label><br/>
+<%= text_field 'webpage', 'file_name'  %></p>
+
+<p><label for="webpage_publish">Publish</label><br/>
+<select id="webpage_publish" name="webpage[publish]"><option value="false">False</option><option value="true" selected>True</option></select></p>
+<!--[eoform:webpage]-->
+
+  <%= submit_tag "Update" %><br/>
+<% end %>

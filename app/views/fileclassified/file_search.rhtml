@@ -1,0 +1,25 @@
+<h1>Search Files</h1>
+
+<% if @fileclassifieds.blank? %>
+<p> No New File.</p>
+<% else %>
+
+
+<h3> 
+	Search: 
+	<%= text_field "fileclassified", "name" -%>
+	<%= observe_field :fileclassified_name,
+	:frequency => 1.0,
+	:update => 'fileclassifieds',
+	:url => { :controller => 'fileclassified', :action=> 'search' },
+	:with => "'search=' + encodeURIComponent(value)"
+	%>
+</h3>
+
+<div id="fileclassifieds">
+		<%= render :partial => 'fileclassified', :collection => @fileclassifieds %> 
+	</div>
+<% end %>
+
+
+<br />

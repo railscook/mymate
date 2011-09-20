@@ -1,0 +1,14 @@
+<%= error_messages_for 'stylesheet' %>
+<h1> Upload stylesheet</h1>
+<fieldset>
+<%= start_form_tag ({:action => 'createupload'}, :multipart => true) %>
+  
+  	<h3> New StyleSheet: </h3><br/>
+
+	<input type="file" name="stylesheet[name]" /><br /><br/>
+  <%= submit_tag "Upload" %><br/>
+<%= end_form_tag %>
+</fieldset>
+
+<%= link_to 'Back', :action => 'list' %>
+
