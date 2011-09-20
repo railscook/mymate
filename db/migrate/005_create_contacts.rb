@@ -1,7 +1,6 @@
 class CreateContacts < ActiveRecord::Migration
   def self.up
     create_table :contacts do |t|
-<<<<<<< HEAD
         t.string :name
         t.string :email
         t.string :phone
@@ -15,9 +14,6 @@ class CreateContacts < ActiveRecord::Migration
         t.string :college
         t.string :school
         t.integer :user_id
-=======
-
->>>>>>> 04b21e7546803758ad77c4ea602795c589a2ffc6
       t.timestamps
     end
   end
