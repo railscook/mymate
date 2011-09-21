@@ -1,0 +1,21 @@
+<h1>Mails</h1>
+<table>
+ <tr>
+  <th>To </th>
+  <th>From </th>
+  <th>Subject </th>
+  <th>Date </th>
+  <th>Body </th>
+
+ </tr>
+<% @mails.each do |mail|%>
+ <tr>
+   <td><%= mail.to%></td>
+   <td><%= mail.from%></td>
+   <td><%= mail.subject%></td>
+   <td><%= mail.created_at.to_s%></td>
+   <td><%= mail.body%></td>
+
+ </tr>
+<% end %>
+</table>

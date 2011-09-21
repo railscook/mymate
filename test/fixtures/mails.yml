@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  status: MyString
+  cloudmailin_id: MyString
+  to: MyString
+  from: MyString
+  subject: MyString
+  date: 2011-09-19 12:33:15
+  body: MyText
+
+two:
+  status: MyString
+  cloudmailin_id: MyString
+  to: MyString
+  from: MyString
+  subject: MyString
+  date: 2011-09-19 12:33:15
+  body: MyText

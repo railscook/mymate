@@ -1,5 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :faqs
+  map.resources :mails
+  map.connect "incoming_messages", :controller => "incoming_messages", :action => "create"
+  map.connect "reply", :controller => "reply", :action => "create"
 
   # The priority is based upon order of creation: first created -> highest priority.
   
